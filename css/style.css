@@ -6,15 +6,15 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: minmax(80px, auto) 1fr minmax(80px, auto);
+    grid-template-rows: minmax(80px, max-content) 1fr minmax(80px, max-content);
     height: 100vh;
     grid-gap: 2px;
 
 
     grid-template-areas:
-     "menu menu header-3"
+     "menu menu menu"
      "sidebar-1 main sidebar-2"
-     "footer-1 footer-2 footer-3";
+     "footer footer footer";
 }
 
 /*/
@@ -49,14 +49,14 @@
 }
 
 
-
+/*
 .site-header-3 {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(137, 137, 144, 0.3);
     grid-area: header-3;
-}
+}*/
 
 /*Main*/
 .content {
@@ -98,43 +98,50 @@
 
 /*Footer*/
 
-
-.site-footer-1 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    grid-area: footer-1;
+.site-footer {
+    display: grid;
+    grid-area: footer;
     background-color: rgba(137, 137, 144, 0.9);
 }
 
+/*Setka v setke*/
 
-.copyright {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    grid-area: footer-2;
-    background-color: rgba(137, 137, 144, 0.9)
+.site-footer div.subitems {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 0px
 }
 
-.site-footer-3 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    grid-area: footer-3;
+.site-footer div.subitems div {
     background-color: rgba(137, 137, 144, 0.9);
 }
 
-.site-footer-3 {
-    box-sizing: border-box;
-    padding: 50px 0 0 30px;
-    color: #e0e0e0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 110px;
-    background-color: rgba(137, 137, 144, 0.9);
+.footer-subm {
+    grid-column-end: footer-subm;
 }
 
-.footer-social-links > a:not(:last-child) {
-    margin-right: 15px;
+.site-footer div {
+    background-color: rgba(137, 137, 144, 0.9);
+/*    border: 1px solid #212941;*/
+    border-radius: 5px;
+    padding: 0px 0px;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: roboto;
+}
+
+
+.copyright  {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin: 40px 30px 0px 300px;
+
+}
+
+.footer-social-links  {
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    margin: 20px 30px 20px 30px;
 }
